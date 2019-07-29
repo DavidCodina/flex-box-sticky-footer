@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title> - </title>
+	<meta charset=UTF-8>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+	<header>Header</header>
+
+	<main>
+		<br>
+		<br>
+
+		<article id="article-1">
+			<p>This example is intended to demonstrate the use of a flex container for layout
+			purposes. More specifically, it demonstrates how one can create a simple sticky
+		  footer. Notice how <code>main</code> has <code>flex: 1;</code>, and  <code>body</code>
+		  has:</p>
+
+
+			<pre><code>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    ...
+  }
+			</code></pre>
+
+
+			<p>This means that <code>main</code> will take all of the available space not used by
+			the header and footer. Thus if there's not enough content to fill the browser height,
+		  <code>main</code> will still stretch. In this case, we have more than enough content to
+		  fill the browser height due to the length of this article. However, you can hide the article
+		  to see the effect.</p>
+
+
+			<div style="text-align:center;">
+				<button id="hide-article-button">Hide Article for 5 Seconds</button>
+			</div>
+
+
+			<pre><code>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    ...
+  }
+
+  header {
+    ...
+  }
+
+
+  main {
+    flex: 1;
+    ...
+  }
+
+  footer {
+    ...
+  }
+			</code></pre>
+		</article>
+	</main>
+
+
+	<footer>Footer</footer>
+
+
+	<!-- =========================================================================
+											      	   	<script>
+	========================================================================== -->
+	
+
+	<script>
+		const hide_article_button = document.getElementById("hide-article-button");
+
+		hide_article_button.addEventListener('click', () =>{
+			const article_1 = document.getElementById("article-1");
+
+			article_1.style.display = 'none';
+
+			setTimeout(() => { article_1.style.display = 'block'; }, 5000);
+		});
+	</script>
+</body>
+</html>
